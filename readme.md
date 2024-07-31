@@ -1,6 +1,8 @@
 # makablab
 Makaberry's Homelab Dump
 
+<img src="https://github.com/user-attachments/assets/456dedf1-89f2-435d-a817-e1500f6d1711" height="500"> <img src="https://github.com/user-attachments/assets/521dd89f-bcdf-4212-b7cd-35de0e95a3ae" height="500">
+
 Network:
   1. unifi express
   2. unifi switch lite 16 poe
@@ -44,3 +46,14 @@ IoT:
   4. thirdreality zigbee temp + humidity sensor
   5. apple homepod mini (homekit / thread hub)
   6. apple tv 4k (homekit / thread hub)
+
+Rack:
+  1. deskpi rackmate t1
+       - patch panel
+       - sbc shelf
+       - itx shelf
+       - lots of standard shelves
+       - lots of 1u spacers
+       - 3 x noctua nf-a12x15 + linkup 4-pin pwm to usb cable
+       - lots of velcro tape
+       - lots of zip ties
