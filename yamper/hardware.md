@@ -1,0 +1,5 @@
+- raspberry pi 5
+  - active cooler
+  - m.2 hat
+    - 256gb samsung pm9b1
+  - 27w gan pd usb-c dc psu
