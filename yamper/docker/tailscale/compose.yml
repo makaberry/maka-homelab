@@ -1,0 +1,20 @@
+services:
+  tailscale:
+    container_name: tailscale
+    hostname: yamper
+    image: tailscale/tailscale:stable
+    privileged: true
+    network_mode: "host"
+    environment:
+      - TS_AUTHKEY=#
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_USERSPACE=false
+      - TS_ROUTES=192.168.20.0/24
+      - TS_EXTRA_ARGS=--accept-routes
+    volumes:
+      - /docker/tailscale/data:/var/lib # State data will be stored in this directory 
+      - /dev/net/tun:/dev/net/tun # Required for tailscale to work 
+    cap_add: # Required for tailscale to work 
+      - net_admin
+      - sys_module
+    restart: always
