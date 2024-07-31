@@ -1,0 +1,44 @@
+title: YAMPER
+
+background:
+  image: /background/background.jpg
+  saturate: 50
+  brightness: 50
+favicon: /background/favicon.ico
+theme: dark
+color: slate
+cardBlur: md
+hideVersion: true
+hideErrors: true
+# headerStyle: boxedWidgets
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+
+layout:
+  ADMIN:
+  HOME:
+  MEDIA:
+  UTILITY:
+  NETWORK:
+  POWER:
+    style: row
+    columns: 4
+    useEqualHeights: true
+  YAMPER:
+    style: row
+    columns: 6
+    useEqualHeights: true
+  NICKIT:
+    style: row
+    columns: 6
+    useEqualHeights: true
+  MANTINE:
+    style: row
+    columns: 6
+    useEqualHeights: true
+  CORSOLA:
+    style: row
+    columns: 4
+    useEqualHeights: true
