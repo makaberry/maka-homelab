@@ -1,0 +1,16 @@
+services:
+  pihole:
+    container_name: pihole
+    hostname: YAMPER-PIHOLE
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
+    environment:
+      TZ: 'America/Boise'
+      WEBPASSWORD: [PASS]
+    volumes:
+      - '/docker/pihole/etc-pihole:/etc/pihole'
+      - '/docker/pihole/etc-dnsmasq.d:/etc/dnsmasq.d'
+    restart: unless-stopped
