@@ -1,0 +1,421 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- ADMIN:
+    - yamper:
+        icon: docker.png
+        href: http://192.168.20.11:9000/
+        widget:
+          type: portainer
+          url: http://192.168.20.11:9000
+          env: 2
+          key: #
+    - nickit:
+        icon: docker.png
+        widget:
+          type: portainer
+          url: http://192.168.20.11:9000
+          env: 3
+          key: #
+    - mantine:
+        icon: proxmox.png
+        href: https://192.168.20.40:8006/
+        widget:
+          type: proxmox
+          url: https://192.168.20.40:8006
+          username: #
+          password: #
+    - corsola - ipmi:
+        icon: supermicro.png
+        href: http://192.168.20.31/
+    - corsola:
+        icon: truenas.png
+        href: http://192.168.20.32/
+        widget:
+          type: truenas
+          url: http://192.168.20.32
+          key: #
+          enablePools: true
+          nasType: scale
+
+- HOME:
+    - homekit:
+        icon: apple.png
+        widget:
+          type: homeassistant
+          url: http://192.168.20.44:8123
+          key: #
+          custom:
+            - state: remote.kitchen
+              label: HomePod Mini
+            - state: media_player.living_room
+              label: Apple TV 4K
+    - home assistant:
+        icon: home-assistant.png
+        href: http://192.168.20.44:8123
+        widget:
+          type: homeassistant
+          url: http://192.168.20.44:8123
+          key: #
+          custom:
+            - state: sensor.tp_link_power_strip_2ae0_current_consumption
+            - state: sensor.third_reality_inc_3rsp02028bz_power
+    - scrypted:
+        icon: scrypted.png
+        href: https://192.168.20.45:10443
+        widget:
+          type: uptimekuma
+          url: http://192.168.20.11:3001
+          slug: unown
+    - frigate:
+        icon: frigate.png
+
+- MEDIA:
+    - jellyfin:
+        icon: jellyfin.png
+        href: http://192.168.20.47:8096
+        widget:
+          type: jellyfin
+          url: http://192.168.20.47:8096
+          key: #
+          enableBlocks: true # optional, defaults to false
+          enableNowPlaying: true # optional, defaults to true
+    - gluetun:
+        icon: gluetun.png
+        widget:
+          type: gluetun
+          url: http://192.168.20.12:8000
+    - transmission:
+        icon: transmission.png
+        href: http://192.168.20.12:9091
+        widget:
+          type: transmission
+          url: http://192.168.20.12:9091
+    - radarr:
+        icon: radarr.png
+    - sonarr:
+        icon: sonarr.png
+
+- NETWORK:
+    - unifi:
+        icon: unifi.png
+        href: https://192.168.10.1
+        widget:
+          type: unifi
+          url: https://192.168.10.1
+          username: #
+          password: #
+    - pihole - yamper:
+        icon: pi-hole.png
+        href: http://192.168.20.11/admin/
+        widget:
+          type: pihole
+          url: http://192.168.20.11
+          key: #
+    - pihole - nickit:
+        icon: pi-hole.png
+        href: http://192.168.20.12/admin/
+        widget:
+          type: pihole
+          url: http://192.168.20.12
+          key: #
+    - tailscale - yamper:
+        icon: tailscale.png
+        href: https://login.tailscale.com/admin/machines/
+        widget:
+          type: tailscale
+          deviceid: n7zSbK2pRa11CNTRL
+          key: #
+          hideErrors: true
+    - tailscale - chrom:
+        icon: tailscale.png
+        href: https://login.tailscale.com/admin/machines/
+        widget:
+          type: tailscale
+          deviceid: nuximsfE7n11CNTRL
+          key: #
+          hideErrors: true
+
+- POWER:
+    - unifi:
+        icon: unifi.png
+        widget:
+          type: homeassistant
+          url: http://192.168.20.44:8123
+          key: #
+          custom:
+            - state: sensor.tp_link_power_strip_2ae0_ux_current_consumption
+            - state: sensor.tp_link_power_strip_2ae0_switch_current_consumption
+    - pi:
+        icon: raspberrypi.png
+        widget:
+          type: homeassistant
+          url: http://192.168.20.44:8123
+          key: #
+          custom:
+            - state: sensor.tp_link_power_strip_2ae0_yamper_current_consumption
+            - state: sensor.tp_link_power_strip_2ae0_nickit_current_consumption
+    - x86:
+        icon: debian.png
+        widget:
+          type: homeassistant
+          url: http://192.168.20.44:8123
+          key: #
+          custom:
+            - state: sensor.tp_link_power_strip_2ae0_mantine_current_consumption
+            - state: sensor.tp_link_power_strip_2ae0_corsola_current_consumption
+
+- YAMPER:
+    - cpu:
+        icon: raspberrypi.png
+        widget:
+          type: glances
+          url: http://192.168.20.11:61208
+          version: 4
+          metric: cpu
+          chart: false
+    - temp:
+        widget:
+          type: glances
+          url: http://192.168.20.11:61208
+          version: 4
+          metric: sensor:cpu_thermal 0
+          chart: false
+    - memory:
+        widget:
+          type: glances
+          url: http://192.168.20.11:61208
+          version: 4
+          metric: memory
+          diskUnits: bytes
+          chart: false
+    - disk:
+        widget:
+          type: glances
+          url: http://192.168.20.11:61208
+          version: 4
+          metric: fs:/
+          diskUnits: bytes
+          chart: false
+    - network:
+        widget:
+          type: glances
+          url: http://192.168.20.11:61208
+          version: 4
+          metric: network:eth0
+          diskUnits: bytes
+          chart: false
+
+- NICKIT:
+    - cpu:
+        icon: raspberrypi.png
+        widget:
+          type: glances
+          url: http://192.168.20.12:61208
+          version: 4
+          metric: cpu
+          chart: false
+    - temp:
+        widget:
+          type: glances
+          url: http://192.168.20.12:61208
+          version: 4
+          metric: sensor:cpu_thermal 0
+          chart: false
+    - memory:
+        widget:
+          type: glances
+          url: http://192.168.20.12:61208
+          version: 4
+          metric: memory
+          diskUnits: bytes
+          chart: false
+    - disk:
+        widget:
+          type: glances
+          url: http://192.168.20.12:61208
+          version: 4
+          metric: fs:/
+          diskUnits: bytes
+          chart: false
+    - network:
+        widget:
+          type: glances
+          url: http://192.168.20.12:61208
+          version: 4
+          metric: network:eth0
+          diskUnits: bytes
+          chart: false
+
+- MANTINE:
+    - cpu:
+        icon: proxmox.png
+        widget:
+          type: glances
+          url: http://192.168.20.40:61208
+          username: #
+          password: #
+          version: 4
+          metric: cpu
+          chart: false
+    - temp:
+        widget:
+          type: glances
+          url: http://192.168.20.40:61208
+          username: #
+          password: #
+          version: 4
+          metric: sensor:Package id 0
+          chart: false
+    - memory:
+        widget:
+          type: glances
+          url: http://192.168.20.40:61208
+          username: #
+          password: #
+          version: 4
+          metric: memory
+          diskUnits: bytes
+          chart: false
+    - disk:
+        widget:
+          type: glances
+          url: http://192.168.20.40:61208
+          username: #
+          password: #
+          version: 4
+          metric: fs:/
+          diskUnits: bytes
+          chart: false
+    - network:
+        widget:
+          type: glances
+          url: http://192.168.20.40:61208
+          username: #
+          password: #
+          version: 4
+          metric: network:enp3s0
+          diskUnits: bytes
+          chart: false
+
+- CORSOLA:
+    - cpu:
+        icon: truenas.png
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: cpu
+          chart: false
+    - temp:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: sensor:Package id 0
+          chart: false
+    - memory:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: memory
+          diskUnits: bytes
+          chart: false
+    - network:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: network:eno2
+          diskUnits: bytes
+          chart: false
+    - sda:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: disk:sda
+          diskUnits: bytes
+          chart: false
+    - sdb:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: disk:sdb
+          diskUnits: bytes
+          chart: false
+    - sdc:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: disk:sdc
+          diskUnits: bytes
+          chart: false
+    - sdd:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: disk:sdd
+          diskUnits: bytes
+          chart: false
+    - sda:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: sensor:drivetemp 0
+          diskUnits: bytes
+          chart: false
+    - sdb:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: sensor:drivetemp 1
+          diskUnits: bytes
+          chart: false
+    - sdc:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: sensor:drivetemp 2
+          diskUnits: bytes
+          chart: false
+    - sdd:
+        widget:
+          type: glances
+          url: http://192.168.20.32:61208
+          username: #
+          password: #
+          version: 4
+          metric: sensor:drivetemp 3
+          diskUnits: bytes
+          chart: false
