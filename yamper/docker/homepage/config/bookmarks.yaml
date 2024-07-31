@@ -1,0 +1,55 @@
+- SYNC:
+    - yamper:
+        - abbr: YMPR
+          icon: syncthing.png
+          href: http://yamper.sudo:9099/
+    - nickit:
+        - abbr: NCKT
+          icon: syncthing.png
+          href: http://corsola.sudo:9099/
+    - solrock:
+        - abbr: SLRK
+          icon: syncthing.png
+          href: http://solrock.sudo:9099/
+
+- MAKER:
+    - github:
+        - abbr: GTHB
+          icon: github.png
+          href: https://github.com/
+    - bandcamp:
+        - abbr: BND
+          # icon: bandcamp.png
+          href: https://bandcamp.com/
+    - soundcloud:
+        - abbr: SC
+          # icon: soundcloud.png
+          href: https://soundcloud.com/immakko
+
+- WATCH:
+    - twitch:
+        - abbr: TWTCH
+          icon: twitch.png
+          href: https://twitch.tv/
+    - youtube:
+        - abbr: YT
+          icon: youtube.png
+          href: https://youtube.com/
+    - netflix:
+        - abbr: NTFLX
+          icon: netflix.png
+          href: https://netflix.com/
+    - prime video:
+        - abbr: PRM
+          icon: prime-video.png
+          href: https://amazon.com/Amazon-Video/b?ie=UTF8&node=2858778011
+
+- OTHER:
+    - reddit:
+        - abbr: RE
+          icon: reddit.png
+          href: https://reddit.com/
+    - amazon:
+        - abbr: AMZN
+          icon: amazon.png
+          href: https://amazon.com/
