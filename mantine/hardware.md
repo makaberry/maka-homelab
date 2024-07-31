@@ -1,0 +1,7 @@
+- lattepanda mu
+ - n100 / 8gb ddr5
+ - carrier board lite + active cooler
+   - m.2(m) 256gb wd sn740
+   - m.2(e) coral tpu
+   - usb skyconnect
+ - canakit 45w usb-c pd dc psu
