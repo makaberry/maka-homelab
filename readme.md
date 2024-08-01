@@ -1,6 +1,8 @@
 # makablab
 Makaberry's Homelab Dump
 
+<img src="https://github.com/user-attachments/assets/fafd66ea-f0d5-4c98-819e-f538db5799e6" width="736">
+
 <img src="https://github.com/user-attachments/assets/456dedf1-89f2-435d-a817-e1500f6d1711" height="500"> <img src="https://github.com/user-attachments/assets/521dd89f-bcdf-4212-b7cd-35de0e95a3ae" height="500">
 
 Network:
